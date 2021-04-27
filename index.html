@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="wealApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project WEAL</title>
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body ng-controller="home">
+
+  <div class="container" style=" align-items: center; display: flex; justify-content: center; height: 100vh;">
+    <ul>
+      <li class="center">
+        <a href="/check.html" class="btn-large rounded">Check Levels</a>
+      </li>
+      <li class='center'>
+        <h1 class="bala">{{appName}}</h1>
+      </li>
+      <br>
+      <li class="center">
+        <a href="/providers.html" class="btn-large rounded">&nbsp; &nbsp; Providers &nbsp; &nbsp;</a>
+      </li>
+    </ul>
+
+
+  </div>
+
+  <!-- Materialize and Angular-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <script src='/app.js'></script>
+</body>
+
+</html>

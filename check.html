@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="wealApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project WEAL</title>
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body ng-controller="lpg">
+  <nav>
+    <div class="nav-wrapper white">
+      <a href="#" class="brand-logo center black-text">{{appName}}</a>
+      <ul id="nav-mobile">
+        <li><a href="index.html">
+            <i class="material-icons black-text">
+              keyboard_backspace
+            </i>
+          </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" style=" align-items: center; display: flex; justify-content: center; height: 90vh">
+    <ul>
+      <li class="center">
+        <h1>
+          {{remDays}} Days
+        </h1>
+      </li>
+      <li>
+        <div class="divider"></div>
+        <br>
+      </li>
+      <li>
+        <div class="progress">
+          <div class="determinate" ng-style="{width: usedPer+'%'}"></div>
+        </div>
+      </li>
+      <li class='center'>
+        Remaining {{100-usedPer}}% ( {{ (1-0.01*usedPer)*(total) | number: 1}} /{{ total }} kg)
+      </li>
+      <li class="center">
+        Using {{avgRate}} kg per day
+      </li>
+    </ul>
+
+
+    <!-- Materialize and Angular-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script src='/app.js'></script>
+</body>
+
+</html>
