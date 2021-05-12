@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='wealApp'>
 
 <head>
   <meta charset="UTF-8">
@@ -10,13 +10,44 @@
   <!-- Materialize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/index.css">
 </head>
 
-<body>
-  
-  <!-- Materialize -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<body ng-controller='provider'>
+  <nav>
+    <div class="nav-wrapper white">
+      <a href="#" class="brand-logo center black-text">{{appName}}</a>
+      <ul id="nav-mobile">
+        <li><a href="index.html">
+            <i class="material-icons black-text">
+              keyboard_backspace
+            </i>
+          </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" style=" align-items: center; display: flex; justify-content: center; height: 90vh">
+    <ul class="collapsible">
+      <li ng-repeat='provider in providers'>
+        <div class="collapsible-header"><i class="material-icons">local_gas_station</i>{{provider.name}}</div>
+        <div class="collapsible-body"><span>
+            <a ng-href="tel:{{provider.ph}}" class='btn'><i class="material-icons left">phone</i>Call</a>
+            <a ng-href="sms:{{provider.ph}}?body=Give me the cylinder!!!" class='btn'><i class="material-icons left">message</i>SMS</a>
+          </span></div>
+      </li>
+    </ul>
+
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="/app.js"></script>
 </body>
 
 </html>
